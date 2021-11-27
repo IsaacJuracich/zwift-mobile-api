@@ -114,9 +114,8 @@ class Profile {
   }
 
   followers() {
-    throw new Error('Followers is not supported by the developer API');
-    // this.checkId()
-    // return this.request.json(`/api/developer/followers/${this.id}`)
+    this.checkId()
+    return this.request.json(`/api/profiles/${this.id}/followers`)
   }
 
   followees() {
@@ -125,9 +124,8 @@ class Profile {
   }
 
   activities(start, limit) {
-    throw new Error('Activities are not supported by the developer API');
-    // this.checkId()
-    // return this.request.json(`/api/developer/profile/${this.id}/activities?start=${start || 0}&limit=${limit || 10}`)
+    this.checkId()
+    return this.request.json(`/api/developer/profile/${this.id}/activities?start=${start || 0}&limit=${limit || 10}`)
   }
 
   checkId() {
